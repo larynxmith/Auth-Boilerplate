@@ -12,4 +12,8 @@ router.get('/logout', (req, res) => {
     res.render('auth/logout')
 })
 
+router.post('/login', (req, res) => {
+    res.send("STUB - ToDo: login, then redirect")
+})
+
 module.exports = router

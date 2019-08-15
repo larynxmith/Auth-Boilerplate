@@ -1,0 +1,58 @@
+html, body {
+    margin: 0;
+    padding: 0;
+}
+
+nav {
+    background-color: rebeccapurple;
+    font-size: 32px;
+    display: flex;
+    justify-content: space-between;
+    
+}
+
+nav ul {
+    margin: 0;
+    display: inline;
+    padding-left: 0;
+}
+nav ul li {
+    display: inline;
+    padding: 5px 10px;
+}
+
+nav li a{
+    font-family: 'Roboto', sans-serif;
+    color: white;
+    text-decoration: none;
+}
+
+nav a:hover {
+    color: chartreuse;
+}
+
+#login-form {
+    height: 30vh;
+    width: 50vw;
+    border: 1px solid gray;
+    margin: 0 auto;
+    box-shadow: 10px 5px 5px black;
+    border-radius: 25px;
+    padding: 2%;
+    background-image: linear-gradient(to bottom right, cyan, blue)
+}
+
+#login-form form {
+    display: flex;
+    flex-direction: column;
+
+
+}
+
+#login-form input {
+    max-width: 30%;
+}
+
+#login-form #login-button {
+    max-width: 50px;
+}
