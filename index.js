@@ -1,35 +1,30 @@
-// required modules
-require('dotenv').config()
-let express = require('express')
-let layouts = require('express-ejs-layouts')
+// Require in modules
+require('dotenv').config();
+const express = require('express');
+const layouts = require('express-ejs-layouts');
 
-// Instance
-let app = express()
+// Instantiate the express app
+const app = express();
 
-// middleware
-app.set('view engine', 'ejs')
-app.use(layouts)
-app.use('/', express.static('static'))
-app.use(express.urlencoded({ extended: false }))
+// Set up any middleware or settings
+app.set('view engine', 'ejs');
+app.use(layouts);
+app.use('/', express.static('static'));
+app.use(express.urlencoded({ extended: false }));
 
-// controllers
-app.use('/auth', require ('./controllers/auth'))
+// Controllers
+app.use('/auth', require('./controllers/auth'));
 
-
-// routes
+// Routes
 app.get('/', (req, res) => {
-    res.render('home')
+    res.render('home');
 })
 
-
-//catch-all
 app.get('*', (req, res) => {
-    res.render('404')
+    res.render('404');
 })
 
-
-
-//listen
+// LISTEN!
 app.listen(process.env.PORT, () => {
-    console.log('Server is running at Port', process.env.PORT)
+    console.log("☕ Server is now running at port", process.env.PORT);
 })

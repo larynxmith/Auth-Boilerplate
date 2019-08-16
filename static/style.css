@@ -8,20 +8,20 @@ nav {
     font-size: 32px;
     display: flex;
     justify-content: space-between;
-    
 }
 
 nav ul {
     margin: 0;
     display: inline;
-    padding-left: 0;
-}
-nav ul li {
-    display: inline;
-    padding: 5px 10px;
+    padding-left: 0px;  
 }
 
-nav li a{
+nav ul li {
+    display: inline;
+    padding: 5px 5px;
+}
+
+nav ul li a {
     font-family: 'Roboto', sans-serif;
     color: white;
     text-decoration: none;
@@ -31,28 +31,30 @@ nav a:hover {
     color: chartreuse;
 }
 
-#login-form {
-    height: 30vh;
+form {
+    font-family: 'Roboto', sans-serif;
+    font-size: 18px;
+    display: flex;
+    flex-direction: column;
+    min-height: 30vh;
     width: 50vw;
-    border: 1px solid gray;
     margin: 0 auto;
+    border: 1px solid grey;
     box-shadow: 10px 5px 5px black;
     border-radius: 25px;
     padding: 2%;
-    background-image: linear-gradient(to bottom right, cyan, blue)
+    background-image: linear-gradient(to bottom right, cyan, blue);
+    /* background-image: repeating-linear-gradient(red, yellow 10%, green 20%); */
 }
 
-#login-form form {
-    display: flex;
-    flex-direction: column;
-
-
+.credentials-form input {
+    max-width: 100%;
+    margin: 10px 0px;
+    padding: 1%;
 }
 
-#login-form input {
-    max-width: 30%;
-}
-
-#login-form #login-button {
-    max-width: 50px;
+.credentials-form input[type=submit] {
+    max-width: 175px;
+    padding: 20px 30px;
+    font-size: 36px;
 }

@@ -1,19 +1,22 @@
-let router = require('express').Router()
+const router = require('express').Router();
 
 router.get('/signup', (req, res) => {
-    res.render('auth/signup')
+    res.render('auth/signup');
+})
+router.post('/signup', (req, res) => {
+    res.send(req.body);
 })
 
 router.get('/login', (req, res) => {
-    res.render('auth/login')
-})
-
-router.get('/logout', (req, res) => {
-    res.render('auth/logout')
+    res.render('auth/login');
 })
 
 router.post('/login', (req, res) => {
-    res.send("STUB - ToDo: login, then redirect")
+    res.send('Stub - ToDo: Log in, then redirect');
 })
 
-module.exports = router
+router.get('/logout', (req, res) => {
+    res.render('auth/logout');
+})
+
+module.exports = router;
