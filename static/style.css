@@ -1,6 +1,7 @@
 html, body {
     margin: 0;
     padding: 0;
+    font-family: 'Roboto', sans-serif;
 }
 
 nav {
@@ -57,4 +58,24 @@ form {
     max-width: 175px;
     padding: 20px 30px;
     font-size: 36px;
+}
+
+.error-box {
+    background-color: pink;
+    color: red;
+    font-weight: bold;
+    padding: 30px 50px;
+}
+
+.container {
+    margin: 0 15%;
+    padding-top: 20px;
+    background-color: lavender;
+    height: 100vh;
+}
+
+h1 {
+    margin-top: 0;
+    text-align: center;
+    color: rebeccapurple;
 }

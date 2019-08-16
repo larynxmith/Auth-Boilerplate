@@ -1,16 +1,31 @@
 // Require in modules
 require('dotenv').config();
-const express = require('express');
-const layouts = require('express-ejs-layouts');
+let express = require('express');
+let flash = require('connect-flash');
+let layouts = require('express-ejs-layouts');
+let session = require('express-session');
 
 // Instantiate the express app
-const app = express();
+let app = express();
 
 // Set up any middleware or settings
 app.set('view engine', 'ejs');
 app.use(layouts);
 app.use('/', express.static('static'));
 app.use(express.urlencoded({ extended: false }));
+app.use(session({
+    secret: process.env.SESSION_SECRET,
+    resave: false,
+    saveUninitialized: true
+
+}));
+app.use(flash()); //must be after session
+
+// Custom middleware: write data to locals for every page
+app.use((req, res, next) => {
+    res.locals.alerts = req.flash();
+    next();
+})
 
 // Controllers
 app.use('/auth', require('./controllers/auth'));
