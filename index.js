@@ -3,6 +3,7 @@ require('dotenv').config();
 let express = require('express');
 let flash = require('connect-flash');
 let layouts = require('express-ejs-layouts');
+let passport = require('./config/passportConfig')
 let session = require('express-session');
 
 // Instantiate the express app
@@ -20,6 +21,8 @@ app.use(session({
 
 }));
 app.use(flash()); //must be after session
+app.use(passport.initialize())
+app.use(passport.session())
 
 // Custom middleware: write data to locals for every page
 app.use((req, res, next) => {
@@ -29,6 +32,8 @@ app.use((req, res, next) => {
 
 // Controllers
 app.use('/auth', require('./controllers/auth'));
+app.use('/profile', require('./controllers/profile'));
+
 
 // Routes
 app.get('/', (req, res) => {

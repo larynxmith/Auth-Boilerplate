@@ -65,5 +65,13 @@ module.exports = (sequelize, DataTypes) => {
   user.associate = function(models) {
     // associations can be defined here
   };
+
+//custom function: validPassword
+// Thsi will check on an instacne of the model (specific) user against a typed in password
+// Use bcrypt to compare hashes
+user.prototype.validPassword = function(typedInPassword) {
+    return bcrypt.compareSync(typedInPassword, this.password)
+}
+
   return user;
 };
